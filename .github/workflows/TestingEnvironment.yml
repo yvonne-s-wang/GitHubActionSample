@@ -1,0 +1,20 @@
+# This is simple manual deployment workflow
+
+name: Simple manual deployment workflow
+
+# Controls when the workflow will run
+on:
+  #Allows to run workflow manually from Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+
+  QAT:
+    runs-on: windows-2016
+    #runs-on: ['self-hosted', 'Windows', 'X64']
+    environment:
+      name: QAT
+    steps:
+      - name: echo hello
+        run: echo Hello, world!
